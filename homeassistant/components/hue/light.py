@@ -420,8 +420,6 @@ class HueLight(Light):
         elif flash == FLASH_SHORT:
             command["alert"] = "select"
             del command["on"]
-        else:
-            command["alert"] = "none"
 
         if ATTR_EFFECT in kwargs:
             effect = kwargs[ATTR_EFFECT]
@@ -453,8 +451,6 @@ class HueLight(Light):
         elif flash == FLASH_SHORT:
             command["alert"] = "select"
             del command["on"]
-        else:
-            command["alert"] = "none"
 
         if self.is_group:
             await self.bridge.async_request_call(self.light.set_action(**command))
